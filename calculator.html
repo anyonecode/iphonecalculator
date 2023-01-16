@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/adcdf23364.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="calculator.css">
+    <title>calculator</title>
+</head>
+
+<body>
+    <div class="iphone">
+        <div class="main">
+            <div class="container">
+                <div class="cam">
+                    
+                </div>
+                <div class="circle" >
+
+                </div>
+                <div class="circle1">
+
+                </div>
+                <div class="time">
+                    <p>9:45</p>
+                </div>
+                <div class="top">
+                    <i class="fa-solid fa-signal"></i>
+                    <i class="fa-sharp fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-battery-full"></i>
+                </div>
+                <div class="display"><input type="text" name="display" id="result"></div>
+                <div class="box">
+                    <div class="line-one">
+                        <input type="button" value="AC" onclick="clr()" style="background-color: #c6c6c6;color: #000;">
+                        <input type="button" value="+/-" onclick="neg()"style="background-color: #c6c6c6;color: #000;">
+                        <input type="button" value="%" onclick="per()" onclick="val('1')"
+                         style="background-color: #c6c6c6;color: #000;">
+                        <input type="button" value="/" onclick="dis('/')"
+                            style="background-color: rgb(255, 183, 0);color: #000;">
+                    </div>
+                    <div class="line-two">
+                        <input type="button" value="1" onclick="dis('1')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="2" onclick="dis('2')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="3" onclick="dis('3')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="*" onclick="dis('*')"
+                            style="background-color: rgb(255, 183, 0);color: #000;">
+                    </div>
+                    <div class="line-three">
+                        <input type="button" value="4" onclick="dis('4')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="5" onclick="dis('5')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="6" onclick="dis('6')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="+" onclick="dis('+')"
+                            style="background-color: rgb(255, 183, 0);color: #000;">
+                    </div>
+                    <div class="line-four">
+                        <input type="button" value="7" onclick="dis('7')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="8" onclick="dis('8')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="9" onclick="dis('9')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="-" onclick="dis('-')"
+                            style="background-color: rgb(255, 183, 0);color: #000;">
+                    </div>
+                    <div class="line-five">
+                        <input type="button" value="0" onclick="dis('0')" 
+                            style="border-radius: 50px;width: 140px;background-color: rgb(30, 29, 29)">
+                        <input type="button" value="." onclick="dis('.')"
+                            style="background-color: rgb(30, 29, 29)">
+                        <input type="button" value="=" onclick="solve() "
+                            style="background-color: rgb(255, 183, 0);color: #000;">
+                    </div>
+                    <div class="line" style="rotate: 90deg;"></div>
+                </div>
+                
+            </div>
+    
+        </div>
+    </div>
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val
+            return val
+        }
+        function solve(){
+            let x = document.getElementById('result').value
+            let y = eval(x);
+            document.getElementById('result').value=y
+            return y
+        }
+        function clr(){
+            document.getElementById('result').value=''
+        }
+        function per(){
+            let x = document.getElementById('result').value
+            let z = (x/100);
+            document.getElementById('result').value=z
+        }
+        function neg(){
+            let x = document.getElementById('result').value
+            let n = (-x);
+            document.getElementById('result').value=n   
+        }
+    </script>
+</body>
+
+</html>
